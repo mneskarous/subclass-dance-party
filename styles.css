@@ -19,9 +19,23 @@ body, a:link, a:visited, a:active{
 }
 .title{
   background-color: #777;
+  border: 2px solid white;
 }
+
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border: 10px solid red;
+  border-radius: 50px;
   position:absolute;
+}
+
+.red {
+  border: 2px solid red;
+}
+
+.cyan {
+  border: 2px solid cyan;
+}
+
+.pink {
+  border: 2px solid pink;
 }
