@@ -45,9 +45,11 @@ $(document).ready(function() {
   });
 
   $(".partnersOverlapButton").on('click', function(event) {
-    if (window.dancers.length % 2 === 0) {
-      
-    }
+      //make a copy of the dancers array
+      //sort through the copy by positioning
+      // if the sorted copy of the array's length is even
+        // iterate through every pair of items in the loop
+          // overlap the current pair of items
   });
 
 
