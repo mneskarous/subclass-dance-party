@@ -34,12 +34,15 @@ $(document).ready(function() {
   
   });
 
-    
 
   $(".lineUpButton").on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i++) {
       $(window.dancers[i]).css('left', '30px');
     }
+  });
+
+  $("body").on('mouseover', '.dancer', function(event) {
+    $('.dancer').animate({height: "50px"}).animate({width: "50px"});
   });
 
 
