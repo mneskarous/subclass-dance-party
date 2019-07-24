@@ -32,3 +32,59 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+describe('bouncyDancer', function() {
+  var bouncyDancer, clock;
+  var timeBetweenSteps = 100;
+
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    bouncyDancer = new MakeBouncyDancer(10, 20, timeBetweenSteps);
+  });
+  
+  it('should have a step function to make its node bounce', function() {
+    sinon.spy(bouncyDancer.$node, 'show');
+    bouncyDancer.step();
+    expect(bouncyDancer.$node.show.called).to.be.true;
+  });
+  
+  it('should call step at least once per second', function() {
+    sinon.spy(bouncyDancer, 'step');
+    expect(bouncyDancer.step.callCount).to.be.equal(0);
+    clock.tick(timeBetweenSteps);
+    clock.tick(timeBetweenSteps);
+
+    expect(bouncyDancer.step.callCount).to.be.equal(1);
+  
+    clock.tick(timeBetweenSteps);
+    expect(bouncyDancer.step.callCount).to.be.equal(2);
+  });
+});
+
+describe('jigglyDancer', function() {
+  var jigglyDancer, clock;
+  var timeBetweenSteps = 100;
+
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    jigglyDancer = new MakeJigglyDancer(10, 20, timeBetweenSteps);
+  });
+  
+  it('should have a step function to make its node bounce', function() {
+    sinon.spy(jigglyDancer.$node, 'show');
+    jigglyDancer.step();
+    expect(jigglyDancer.$node.show.called).to.be.true;
+  });
+  
+  it('should call step at least once per second', function() {
+    sinon.spy(jigglyDancer, 'step');
+    expect(jigglyDancer.step.callCount).to.be.equal(0);
+    clock.tick(timeBetweenSteps);
+    clock.tick(timeBetweenSteps);
+
+    expect(jigglyDancer.step.callCount).to.be.equal(1);
+  
+    clock.tick(timeBetweenSteps);
+    expect(jigglyDancer.step.callCount).to.be.equal(2);
+  });
+});
